@@ -511,7 +511,7 @@ class Link(Task):
         A str to indentify this task. Should not already exist in the dag
     """
 
-    def __init__(self, product, dag, name):
+    def __init__(self, source, product, dag, name=None):
         kwargs = dict(hot_reload=dag._params.hot_reload)
         self._source = type(self)._init_source(kwargs)
         super().__init__(product, dag, name, None)
